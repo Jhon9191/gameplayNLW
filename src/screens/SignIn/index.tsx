@@ -21,9 +21,9 @@ export function SignIn() {
 
         <View style={style.content}>
             <Text style={style.title}>
-                Organize {`\n`}
-                suas jogatinas {`\n`}
-                facilmente
+                Conect-se{`\n`}
+                e organize {`\n`}
+                suas jogatinas
             </Text>
 
             <Text style={style.subtitle}>

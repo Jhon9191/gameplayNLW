@@ -11,8 +11,10 @@ Rajdhani_500Medium,
 Rajdhani_700Bold } 
 from '@expo-google-fonts/rajdhani';
 import AppLoading from 'expo-app-loading';
-import { SignIn } from './src/screens/SignIn';
 import { Background } from './src/components/Background';
+
+import { SignIn } from './src/screens/SignIn';
+import { Home } from './src/screens/Home';
 
 export default function App() {
 
@@ -33,7 +35,7 @@ export default function App() {
     backgroundColor="transparent"
     translucent
     />
-    <SignIn/>
+    <Home/>
     </Background>
   );
 }

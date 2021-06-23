@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, Image, StatusBar } from 'react-native';
+import { Text, View, Image, StatusBar } from 'react-native';
 
 
 import ilustration from '../../assets/illustration.png';
@@ -21,7 +21,7 @@ export function SignIn() {
 
         <View style={style.content}>
             <Text style={style.title}>
-                Conect-se{`\n`}
+                Conecte-se{`\n`}
                 e organize {`\n`}
                 suas jogatinas
             </Text>

@@ -9,11 +9,6 @@ import ButtonIcon from '../../components/ButtonIcon';
 export function SignIn() {
     return (
     <View style={style.container}>
-  
-        <StatusBar barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-        />
 
         <Image source={ilustration}
         style={style.image}

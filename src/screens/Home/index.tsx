@@ -2,12 +2,14 @@ import React from 'react';
 
 import { View } from 'react-native'
 import { styles } from './styles'
-import { Profile } from '../../components/Profile'
-export function Home(){
-  return(
+import { Profile } from '../../components/Profile';
+import { ButtonAdd } from '../../components/ButtonAdd';
+export function Home() {
+  return (
     <View>
       <View style={styles.header}>
-        <Profile/>
+        <Profile />
+        <ButtonAdd />
       </View>
     </View>
   )

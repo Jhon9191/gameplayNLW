@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ScrollView, Text
 } from 'react-native';
 import { styles } from './styles';
 import { categories } from '../../utils/categories';
-export function CategorySelect() {
+import { Category } from '../Category';
+
+
+type Props = {
+  categorySelected: string;
+  setCategory: (categoryId: string) => void;
+}
+
+export function CategorySelect({
+  categorySelected,
+  setCategory
+}: Props) {
+
   return (
     <ScrollView style={styles.container}
       horizontal
@@ -12,7 +24,13 @@ export function CategorySelect() {
       contentContainerStyle={{ paddingRight: 40 }}
     >
       {categories.map(category => (
-        <Text>oi</Text>
+        <Category
+          key={category.id}
+          icon={category.icon}
+          title={category.title}
+          checked={category.id === categorySelected}
+          onPress={() => setCategory(category.id)}
+        />
       ))}
     </ScrollView>
 

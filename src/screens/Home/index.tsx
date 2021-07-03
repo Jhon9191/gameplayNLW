@@ -49,6 +49,8 @@ export function Home() {
                 </View>
 
                 <FlatList
+                    style={styles.matches}
+                    showsHorizontalScrollIndicator={false}
                     data={appointments}
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => (

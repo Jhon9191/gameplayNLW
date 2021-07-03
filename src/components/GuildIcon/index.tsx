@@ -6,7 +6,7 @@ import {
 import { styles } from './styles';
 
 export function GuildIcon() {
-  const uri = "https://logosmarcas.net/wp-content/uploads/2020/11/Discord-Emblema.jpg"
+  const uri = "https://w5fc.org/wp-content/uploads/2021/05/s9biyhs4lix61.jpg"
   return (
     <Image
       style={styles.image}

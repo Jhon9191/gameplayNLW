@@ -30,6 +30,15 @@ export function Appointment({
     <RectButton>
       <View style={styles.container}>
         <GuildIcon />
+
+        <View style={styles.content}>
+          <View style={styles.header}>
+            <Text style={styles.title}>
+              {data.guild.name}
+            </Text>
+          </View>
+        </View>
+
       </View>
     </RectButton>
   )

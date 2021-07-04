@@ -40,13 +40,13 @@ export const styles = StyleSheet.create({
     },
     
     checked:{
-        width: 10,
-        height: 10,
-        backgroundColor: theme.colors.primary,
-        position: 'absolute',
-        right: 7,
-        top: 7,
-        borderRadius: 3
+      width: 10,
+      height: 10,
+      backgroundColor: theme.colors.primary,
+      position: 'absolute',
+      right: 7,
+      top: 7,
+      borderRadius: 3
     },
     
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, FlatList } from 'react-native'
 import { styles } from './styles'
 import { Profile } from '../../components/Profile';
+import { Background } from '../../components/Background';
 import { ButtonAdd } from '../../components/ButtonAdd';
 import { CategorySelect } from '../../components/CategorySelect';
 import { ListHeader } from '../../components/ListHeader';
@@ -44,7 +45,7 @@ export function Home() {
     }
 
     return (
-        <View>
+        <Background>
             <View style={styles.header}>
                 <Profile />
                 <ButtonAdd />
@@ -74,6 +75,6 @@ export function Home() {
                 />
 
             </View>
-        </View>
+        </Background>
     )
 }

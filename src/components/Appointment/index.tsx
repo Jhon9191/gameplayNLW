@@ -38,7 +38,7 @@ export function Appointment({
   const { primary, on, secondary50, secondary70 } = theme.colors;
 
   return (
-    <RectButton>
+    <RectButton {...rest}>
       <View style={styles.container}>
         <GuildIcon />
 

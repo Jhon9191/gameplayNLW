@@ -4,7 +4,7 @@ import { Text, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import ilustration from '../../assets/illustration.png';
 import { style } from './styles';
-import ButtonIcon from '../../components/ButtonIcon';
+import { ButtonIcon } from '../../components/ButtonIcon';
 import { Background } from '../../components/Background';
 
 export function SignIn() {

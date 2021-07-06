@@ -14,6 +14,7 @@ import { GuildIcon } from '../../components/GuildIcon';
 import { CategorySelect } from '../../components/CategorySelect';
 import { Header } from '../../components/Header';
 import { SmallInput } from '../../components/SmallInput';
+import { TextArea } from '../../components/TextArea';
 
 export function AppointmentCreate() {
 
@@ -93,6 +94,7 @@ export function AppointmentCreate() {
           </View>
         </View>
 
+          <TextArea/>
 
       </View>
     </Background>

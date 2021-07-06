@@ -63,22 +63,36 @@ export function AppointmentCreate() {
             />
           </View>
         </RectButton>
-        
-        <View style={styles.column}>
-          <SmallInput />
-          <Text style={styles.label}>
-            /
-          </Text>
-          <SmallInput />
+
+        <View style={styles.field}>
+          <View>
+            <Text style={styles.label}>
+              Dia e mês
+            </Text>
+
+            <View style={styles.colum}>
+              <SmallInput maxLength={2}/>
+              <Text style={styles.divider}>
+                /
+              </Text>
+              <SmallInput maxLength={2}/>
+            </View>
+          </View>
+          <View>
+            <Text style={styles.label}>
+              Hora e minuto
+            </Text>
+
+            <View style={styles.colum}>
+              <SmallInput maxLength={2}/>
+              <Text style={styles.divider}>
+                :
+              </Text>
+              <SmallInput maxLength={2}/>
+            </View>
+          </View>
         </View>
 
-        <View style={styles.column}>
-          <SmallInput />
-          <Text style={styles.label}>
-            :
-          </Text>
-          <SmallInput />
-        </View>
 
       </View>
     </Background>

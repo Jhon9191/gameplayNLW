@@ -21,7 +21,7 @@ import { TextArea } from '../../components/TextArea';
 import { Button } from '../../components/Button';
 import { ModalView } from '../../components/ModalView';
 import Guilds from '../Guilds';
-import { GuildProps } from '../../components/Appointment';
+import { GuildProps } from '../../components/Guild';
 
 export function AppointmentCreate() {
 
@@ -73,15 +73,13 @@ export function AppointmentCreate() {
         <View style={styles.form}>
           <RectButton onPress={handleOpenGuilds}>
             <View style={styles.select}>
-
-              {
-                /*<View style={styles.image} />*/
-                <GuildIcon />
-              }
-
+              { guild.icon 
+              ? <GuildIcon />
+              : <View style={styles.image} />  }
               <View style={styles.selectBody}>
+
                 <Text style={styles.label}>
-                  Selecione um servidor
+                  {guild.name ? guild.name : "Selecione um servidor"}
                 </Text>
               </View>
               <Feather
@@ -148,7 +146,7 @@ export function AppointmentCreate() {
         visible={openGuildsModa}
         closeModal={handleCloseGuilds}
       >
-        <Guilds/>
+        <Guilds handleGuildSelect={handleGuildSelect} />
       </ModalView>
     </KeyboardAvoidingView>
   )

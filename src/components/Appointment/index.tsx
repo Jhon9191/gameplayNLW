@@ -10,13 +10,8 @@ import { styles } from './styles';
 import PlayerSvg from '../../assets/player.svg'
 import { theme } from '../../global/styles/theme';
 import CalendarSvg from '../../assets/calendar.svg';
-
-export type GuildProps = {
-  id: string,
-  name: string,
-  icon: null,
-  owner: boolean
-}
+import { GuildProps } from '../Guild';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export type AppointmentProps = {
   id: string;
@@ -40,7 +35,11 @@ export function Appointment({
   return (
     <RectButton {...rest}>
       <View style={styles.container}>
-        <GuildIcon />
+        <LinearGradient style={styles.guildIconContainer}
+        colors={[secondary50, secondary70]}
+        >
+          <GuildIcon />
+        </LinearGradient>
 
         <View style={styles.content}>
           <View style={styles.header}>
@@ -57,21 +56,21 @@ export function Appointment({
               <CalendarSvg />
 
               <Text style={styles.date}>
-                { data.date }                
+                {data.date}
               </Text>
             </View>
 
-          <View style={styles.playersInfo}>
-              <PlayerSvg fill={ owner ? primary : on}/>
+            <View style={styles.playersInfo}>
+              <PlayerSvg fill={owner ? primary : on} />
 
               <Text style={[
-                styles.player, 
+                styles.player,
                 { color: owner ? primary : on }
               ]}>
-                { owner ? 'Anfitrião' : 'Visitante' }
+                {owner ? 'Anfitrião' : 'Visitante'}
               </Text>
-            </View> 
             </View>
+          </View>
         </View>
       </View>
     </RectButton>

@@ -38,7 +38,7 @@ export function Home() {
             category: '2',
             date: '22/06 às 20:40h',
             description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
-        }
+        },
     ]
 
     function handleCategorySelect(categoryId: string) {
@@ -83,6 +83,7 @@ export function Home() {
                         />
                     )}
                     ItemSeparatorComponent={()=><ListDivider/>}
+                    contentContainerStyle={{paddingBottom:69}}
                 />
 
             </View>

@@ -48,4 +48,9 @@ export const styles = StyleSheet.create({
     borderRadius: 8,    
   },
 
+  column: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
 });

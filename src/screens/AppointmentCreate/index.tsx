@@ -13,6 +13,7 @@ import { Background } from '../../components/Background';
 import { GuildIcon } from '../../components/GuildIcon';
 import { CategorySelect } from '../../components/CategorySelect';
 import { Header } from '../../components/Header';
+import { SmallInput } from '../../components/SmallInput';
 
 export function AppointmentCreate() {
 
@@ -62,8 +63,24 @@ export function AppointmentCreate() {
             />
           </View>
         </RectButton>
-      </View>
+        
+        <View style={styles.column}>
+          <SmallInput />
+          <Text style={styles.label}>
+            /
+          </Text>
+          <SmallInput />
+        </View>
 
+        <View style={styles.column}>
+          <SmallInput />
+          <Text style={styles.label}>
+            :
+          </Text>
+          <SmallInput />
+        </View>
+
+      </View>
     </Background>
   )
 }

@@ -33,12 +33,11 @@ export function AppointmentCreate() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
+      <ScrollView>
 
-      <Background>
           <Header
             title="Agenda partida"
             />
-            <ScrollView>
 
           <Text style={[
             styles.label,
@@ -119,7 +118,6 @@ export function AppointmentCreate() {
               maxLength={100}
               numberOfLines={5}
               autoCorrect={false}
-              placeholder="Digite aqui"
             />
             <View style={styles.footer}>
               <Button
@@ -128,7 +126,6 @@ export function AppointmentCreate() {
             </View>
           </View>
         </ScrollView>
-      </Background>
     </KeyboardAvoidingView>
   )
 }

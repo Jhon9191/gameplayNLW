@@ -72,29 +72,45 @@ export function AppointmentCreate() {
             </Text>
 
             <View style={styles.colum}>
-              <SmallInput maxLength={2}/>
+              <SmallInput maxLength={2} />
               <Text style={styles.divider}>
                 /
               </Text>
-              <SmallInput maxLength={2}/>
+              <SmallInput maxLength={2} />
             </View>
           </View>
+
           <View>
             <Text style={styles.label}>
               Hora e minuto
             </Text>
 
             <View style={styles.colum}>
-              <SmallInput maxLength={2}/>
+              <SmallInput maxLength={2} />
               <Text style={styles.divider}>
                 :
               </Text>
-              <SmallInput maxLength={2}/>
+              <SmallInput maxLength={2} />
             </View>
           </View>
         </View>
 
-          <TextArea/>
+        <View style={[styles.field, { marginBottom: 12 }]}>
+          <Text style={styles.label}>
+            Descrição
+          </Text>
+          <Text style={styles.caracteresLimit}>
+            Max 100 caracteres
+          </Text>
+        </View>
+
+        <TextArea 
+          multiline
+          maxLength={100}
+          numberOfLines={5}
+          autoCorrect={false}
+          placeholder="Digite aqui"
+        />
 
       </View>
     </Background>

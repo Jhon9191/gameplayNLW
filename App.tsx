@@ -14,7 +14,7 @@ import {
   from '@expo-google-fonts/rajdhani';
 import AppLoading from 'expo-app-loading';
 import { Background } from './src/components/Background';
-
+import { AuthProvider } from "./src/hooks/auth"
 import { Routes } from './src/routes';
 
 export default function App() {
@@ -37,7 +37,9 @@ export default function App() {
         translucent
         hidden={true}
       />
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </Background>
   );
 }

@@ -6,8 +6,12 @@ import ilustration from '../../assets/illustration.png';
 import { style } from './styles';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { Background } from '../../components/Background';
+import { useAuth } from "../../hooks/auth";
 
 export function SignIn() {
+
+    const { user } = useAuth();
+    
     const navigate = useNavigation();
     return (
         <Background>

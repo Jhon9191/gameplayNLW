@@ -10,9 +10,16 @@ import { useAuth } from "../../hooks/auth";
 
 export function SignIn() {
 
-    const { user } = useAuth();
+    const { user, signIn } = useAuth();
     
     const navigate = useNavigation();
+    async function handleSignin(){
+        try {
+            await signIn()
+        } catch (error) {
+            
+        }
+    }
     return (
         <Background>
             <View style={style.container}>
@@ -31,7 +38,7 @@ export function SignIn() {
                         favoritos com seus amigos
                     </Text>
 
-                    <ButtonIcon title="Entrar com Discord" onPress={() => navigate.navigate("Home")} />
+                    <ButtonIcon title="Entrar com Discord" onPress={handleSignin} />
                 </View>
             </View>
         </Background>

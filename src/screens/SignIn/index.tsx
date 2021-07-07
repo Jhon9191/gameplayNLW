@@ -1,46 +1,62 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { 
+  View, 
+  Text, 
+  Image,
+  Alert,
+  ActivityIndicator
+} from 'react-native';
 
-import { useNavigation } from '@react-navigation/native';
-import ilustration from '../../assets/illustration.png';
-import { style } from './styles';
+import { useAuth } from '../../hooks/auth';
+
+import IllustrationImg from '../../assets/illustration.png';
+import { theme } from '../../global/styles/theme';
+import { styles } from './styles';
+
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { Background } from '../../components/Background';
-import { useAuth } from "../../hooks/auth";
 
-export function SignIn() {
+export function SignIn(){
+  const { loading, signIn } = useAuth();
 
-    const { user, signIn } = useAuth();
-    
-    const navigate = useNavigation();
-    async function handleSignin(){
-        try {
-            await signIn()
-        } catch (error) {
-            
-        }
+  async function handleSignIn() {
+    try {
+      await signIn();
+    }catch (error) {
+      Alert.alert(error);
     }
-    return (
-        <Background>
-            <View style={style.container}>
-                <Image source={ilustration}
-                    style={style.image}
-                    resizeMode="stretch" />
-                <View style={style.content}>
-                    <Text style={style.title}>
-                        Conecte-se{`\n`}
-                        e organize {`\n`}
-                        suas jogatinas
-                    </Text>
+  }
 
-                    <Text style={style.subtitle}>
-                        Crie grupos para jogar seus games {`\n`}
-                        favoritos com seus amigos
-                    </Text>
+  return(
+    <Background>
+      <View style={styles.container}>     
+        <Image 
+          source={IllustrationImg} 
+          style={styles.image} 
+          resizeMode="stretch"
+        />
 
-                    <ButtonIcon title="Entrar com Discord" onPress={handleSignin} />
-                </View>
-            </View>
-        </Background>
-    )
+        <View style={styles.content}>
+          <Text style={styles.title}>
+            Conecte-se {'\n'}
+            e organize suas {'\n'} 
+            jogatinas
+          </Text>
+
+          <Text style={styles.subtitle}>
+            Crie grupos para jogar seus games {'\n'} 
+            favoritos com seus amigos
+          </Text>
+
+          {
+            loading ? <ActivityIndicator color={theme.colors.primary} /> :
+            <ButtonIcon 
+              title="Entrar com Discord"
+              onPress={handleSignIn}
+            />  
+          }                             
+        </View>
+      </View>
+    </Background>
+  );
 }

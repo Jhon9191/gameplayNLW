@@ -10,6 +10,8 @@ export const styles = StyleSheet.create({
 
   user:{
     flexDirection: 'row',
+    justifyContent: "flex-end",
+    alignItems: "center"
   },
 
   greeting:{

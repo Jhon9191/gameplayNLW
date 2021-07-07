@@ -17,7 +17,7 @@ export function Profile(){
     <View>
       <View style={styles.user}> 
         <Text style={styles.greeting}>Olá,</Text>
-        <Text style={styles.username}>{user.firstName}</Text>
+        <Text style={[styles.username,{fontSize: user.firstName.length > 12 ? 18 : 24}]}>{user.firstName}</Text>
       </View>
       <Text style={styles.message}>Hoje é dia de vitória</Text>
     </View>

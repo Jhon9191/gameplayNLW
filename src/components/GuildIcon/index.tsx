@@ -1,17 +1,35 @@
 import React from 'react';
-import {
-  Image,
-  Text
-} from 'react-native';
-import { styles } from './styles';
+import { Image, View } from 'react-native';
 
-export function GuildIcon() {
-  const uri = "https://w5fc.org/wp-content/uploads/2021/05/s9biyhs4lix61.jpg"
+import { styles } from './styles';
+import DiscordSvg from '../../assets/discord.svg';
+
+const { CDN_IMAGE } = process.env;
+
+type Props = {
+  guildId: string;
+  iconId: string | null;
+}
+
+export function GuildIcon({ guildId, iconId }: Props) {
+  const uri = `${CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
+
   return (
-    <Image
-      style={styles.image}
-      source={{ uri }}
-      resizeMode='cover'
-    />
+    <View style={styles.container}>
+      {  
+        iconId ?    
+        <Image 
+          source={{ uri }}
+          style={styles.image}
+          resizeMode="cover"    
+        />
+        :
+        <DiscordSvg 
+          width={40} 
+          height={40}
+        />
+      }
+    </View>
   )
+
 }
